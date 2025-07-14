@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5aehsjhu7d58"]
+
+[ext_resource type="PackedScene" uid="uid://ya0g4jbdeu55" path="res://scenes/JamPanel.tscn" id="1_cpr0p"]
+[ext_resource type="PackedScene" uid="uid://cvwbuiyyjfy6t" path="res://scenes/Generator.tscn" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://ch4d70hqw54ay" path="res://scripts/global.gd" id="1_s0nni"]
+[ext_resource type="PackedScene" uid="uid://bmd7tmmwpa4sl" path="res://scenes/Exports.tscn" id="3_78awf"]
+[ext_resource type="PackedScene" uid="uid://tdu6wuu1f3hj" path="res://scenes/Fragment.tscn" id="5_s0nni"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_s0nni")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_right = 1148.0
+offset_bottom = 652.0
+current_tab = 1
+
+[node name="Jams and Submits" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Jams" type="HBoxContainer" parent="TabContainer/Jams and Submits" groups=["jam"]]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="JamPanel" parent="TabContainer/Jams and Submits/Jams" instance=ExtResource("1_cpr0p")]
+layout_mode = 2
+
+[node name="JamPanel2" parent="TabContainer/Jams and Submits/Jams" instance=ExtResource("1_cpr0p")]
+layout_mode = 2
+
+[node name="JamPanel3" parent="TabContainer/Jams and Submits/Jams" instance=ExtResource("1_cpr0p")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Jams and Submits"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Exports" type="HBoxContainer" parent="TabContainer/Jams and Submits" groups=["export"]]
+layout_mode = 2
+
+[node name="Exports" parent="TabContainer/Jams and Submits/Exports" groups=["export"] instance=ExtResource("3_78awf")]
+layout_mode = 2
+
+[node name="Themes" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ThemeGenerators" type="HBoxContainer" parent="TabContainer/Themes"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="Zombies" parent="TabContainer/Themes/ThemeGenerators" instance=ExtResource("1_ibkli")]
+layout_mode = 2
+border_color = Color(0.827451, 0, 0, 1)
+title = "Zombies"
+
+[node name="Mythology" parent="TabContainer/Themes/ThemeGenerators" instance=ExtResource("1_ibkli")]
+layout_mode = 2
+title = "Mythology"
+
+[node name="Fantasy" parent="TabContainer/Themes/ThemeGenerators" instance=ExtResource("1_ibkli")]
+layout_mode = 2
+title = "Fantasy"
+
+[node name="CreatedThemes" type="HBoxContainer" parent="TabContainer/Themes" groups=["theme"]]
+layout_mode = 2
+
+[node name="Fragment" parent="TabContainer/Themes/CreatedThemes" instance=ExtResource("5_s0nni")]
+layout_mode = 2
+
+[node name="Genre" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="GenreGenerators" type="HBoxContainer" parent="TabContainer/Genre"]
+layout_mode = 2
+
+[node name="Roguelike" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
+layout_mode = 2
+image = "uid://cnhuwabew6335"
+border_color = Color(0.780392, 0, 0, 1)
+duration = 1.0
+title = "Roguelike"
+type = "Genre"
+
+[node name="Platformer" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
+layout_mode = 2
+title = "Platformer"
+type = "Genre"
+
+[node name="Tower Defense" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
+layout_mode = 2
+title = "Tower Defense"
+type = "Genre"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Genre" groups=["genre"]]
+layout_mode = 2
