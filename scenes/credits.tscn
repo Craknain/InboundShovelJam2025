@@ -37,19 +37,19 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="2d art" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "2D Artist     :"
+
+[node name="programer" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Programer  :"
+
+[node name="programer2" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Programer  :"
+
 [node name="font" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Font style   :"
-
-[node name="font2" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Font style   :"
-
-[node name="font3" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Font style   :"
-
-[node name="font4" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Font style   :"
 
@@ -57,24 +57,28 @@ text = "Font style   :"
 layout_mode = 2
 alignment = 1
 
-[node name="LinkButton" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="2d art" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "PIXELOID"
+text = "chibiparty"
+underline = 1
 uri = "https://ggbot.itch.io/pixeloid-font"
 
-[node name="LinkButton2" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="programer" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "PIXELOID"
+text = "TheBugMaker"
+underline = 1
 uri = "https://ggbot.itch.io/pixeloid-font"
 
-[node name="LinkButton3" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="programer2" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "PIXELOID"
+text = "Craknain"
+underline = 1
 uri = "https://ggbot.itch.io/pixeloid-font"
 
-[node name="LinkButton4" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="font" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "PIXELOID"
+underline = 1
 uri = "https://ggbot.itch.io/pixeloid-font"
 
 [node name="back" type="Button" parent="."]
