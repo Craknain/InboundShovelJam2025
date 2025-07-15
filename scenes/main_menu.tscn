@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkon450nrp08m"]
 
-[ext_resource type="Theme" uid="uid://desavaogq0sto" path="res://assets/game_Theme.tres" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cdh5ywtlipxi0" path="res://assets/PixeloidSans.otf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bgb5wum5hp5ey" path="res://scripts/main_menu.gd" id="2_bqqt6"]
 
@@ -121,7 +121,7 @@ text = ">"
 [node name="credits" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(150, 36)
 layout_mode = 2
-text = "Credit"
+text = "Credits"
 
 [node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 layout_mode = 2
