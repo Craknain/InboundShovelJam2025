@@ -2,8 +2,8 @@ extends PanelContainer
 class_name Generator
 
 # On ready
-@onready var title_label: Label = $MarginContainer/VBoxContainer/Title
-@onready var duration_label: Label = $MarginContainer/VBoxContainer/Duration
+@onready var title_label: Label = $MarginContainer/VBoxContainer/TitleLabel
+@onready var duration_label: Label = $MarginContainer/VBoxContainer/DurationLabel
 @onready var create_button: Button = $MarginContainer/VBoxContainer/CreateButton
 @onready var texture_rect: TextureRect = $MarginContainer/VBoxContainer/TextureRect
 
@@ -50,3 +50,4 @@ func _on_mouse_exited() -> void:
 
 func _on_create_button_pressed() -> void:
 	Global.create_element("Fragment", Fragment.create_fragment(type, title, load(image)))
+	Global.reduce_days(duration)
