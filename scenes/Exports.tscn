@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmd7tmmwpa4sl"]
 
 [ext_resource type="Script" uid="uid://dkbdkvk63j87n" path="res://scripts/exports.gd" id="1_el1hm"]
-[ext_resource type="Theme" uid="uid://desavaogq0sto" path="res://assets/game_Theme.tres" id="1_onuvg"]
+[ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="1_onuvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_el1hm"]
 size = Vector2(262, 229)

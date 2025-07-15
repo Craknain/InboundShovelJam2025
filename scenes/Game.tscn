@@ -1,10 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5aehsjhu7d58"]
+[gd_scene load_steps=10 format=3 uid="uid://c5aehsjhu7d58"]
 
 [ext_resource type="PackedScene" uid="uid://ya0g4jbdeu55" path="res://scenes/JamPanel.tscn" id="1_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cvwbuiyyjfy6t" path="res://scenes/Generator.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://ch4d70hqw54ay" path="res://scripts/global.gd" id="1_s0nni"]
 [ext_resource type="PackedScene" uid="uid://bmd7tmmwpa4sl" path="res://scenes/Exports.tscn" id="3_78awf"]
 [ext_resource type="PackedScene" uid="uid://tdu6wuu1f3hj" path="res://scenes/Fragment.tscn" id="5_s0nni"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6qh1"]
+bg_color = Color(0.6, 0.113725, 0.113725, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.917647, 0.278431, 0.207843, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.917647, 0.278431, 0.207843, 1)
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_defsd"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_v6qh1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0nni"]
+bg_color = Color(0.6, 0.113725, 0.113725, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.917647, 0.278431, 0.207843, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0.917647, 0.278431, 0.207843, 1)
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_aug50"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_s0nni")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_s0nni")
@@ -42,6 +78,7 @@ layout_mode = 2
 
 [node name="Exports" parent="TabContainer/Jams and Submits/Exports" groups=["export"] instance=ExtResource("3_78awf")]
 layout_mode = 2
+theme = SubResource("Theme_defsd")
 
 [node name="Themes" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
@@ -69,6 +106,7 @@ layout_mode = 2
 
 [node name="Fragment" parent="TabContainer/Themes/CreatedThemes" instance=ExtResource("5_s0nni")]
 layout_mode = 2
+theme = SubResource("Theme_aug50")
 
 [node name="Genre" type="VBoxContainer" parent="TabContainer"]
 visible = false
