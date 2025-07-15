@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://desavaogq0sto"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://desavaogq0sto"]
 
 [ext_resource type="FontFile" uid="uid://cdh5ywtlipxi0" path="res://assets/PixeloidSans.otf" id="1_xpaxo"]
 
@@ -68,6 +68,16 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6evr2"]
+bg_color = Color(1, 0.835294, 0.501961, 1)
+border_width_bottom = 5
+border_color = Color(0.999999, 0.789112, 0.329315, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -93,3 +103,4 @@ Button/styles/focus = SubResource("StyleBoxFlat_ouq0g")
 Button/styles/hover = SubResource("StyleBoxFlat_jycv3")
 Button/styles/normal = SubResource("StyleBoxFlat_lf1rr")
 Button/styles/pressed = SubResource("StyleBoxFlat_sd8y6")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_6evr2")

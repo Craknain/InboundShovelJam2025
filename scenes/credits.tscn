@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://c6wl5ayqffkwl"]
+[gd_scene load_steps=3 format=3 uid="uid://c6wl5ayqffkwl"]
+
+[ext_resource type="Theme" uid="uid://desavaogq0sto" path="res://assets/game_Theme.tres" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://bnr6qif4b0km5" path="res://scripts/credits.gd" id="1_2ckv8"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2ckv8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -15,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.835294, 0.501961, 1)
+color = Color(0.860511, 0.587912, 0.335849, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
@@ -33,14 +37,59 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="font" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "1"
+text = "Font style   :"
+
+[node name="font2" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Font style   :"
+
+[node name="font3" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Font style   :"
+
+[node name="font4" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Font style   :"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="LinkButton" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "2"
+text = "PIXELOID"
+uri = "https://ggbot.itch.io/pixeloid-font"
+
+[node name="LinkButton2" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "PIXELOID"
+uri = "https://ggbot.itch.io/pixeloid-font"
+
+[node name="LinkButton3" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "PIXELOID"
+uri = "https://ggbot.itch.io/pixeloid-font"
+
+[node name="LinkButton4" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "PIXELOID"
+uri = "https://ggbot.itch.io/pixeloid-font"
+
+[node name="back" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_0bpdh")
+text = "Back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
