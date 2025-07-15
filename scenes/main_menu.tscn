@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkon450nrp08m"]
+[gd_scene load_steps=6 format=3 uid="uid://dkon450nrp08m"]
 
 [ext_resource type="Theme" uid="uid://desavaogq0sto" path="res://assets/game_Theme.tres" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cdh5ywtlipxi0" path="res://assets/PixeloidSans.otf" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://bgb5wum5hp5ey" path="res://scripts/main_menu.gd" id="2_bqqt6"]
+
+[sub_resource type="Animation" id="Animation_bqqt6"]
+resource_name = "fade-in"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
+_data = {
+&"fade-in": SubResource("Animation_bqqt6")
+}
 
 [node name="Main menu" type="Control"]
 layout_mode = 3
@@ -11,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ekxnf")
+script = ExtResource("2_bqqt6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -19,6 +29,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(1, 0.835294, 0.501961, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -34,6 +48,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 32
 text = "Title of the game text"
+
+[node name="seperator" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -135,3 +153,11 @@ theme_override_font_sizes/font_size = 30
 text = "<"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wu84c")
+}
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/quit" to="." method="_on_quit_pressed"]

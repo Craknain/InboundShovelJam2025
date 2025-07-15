@@ -40,11 +40,11 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.225, 0.225, 0.225, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+bg_color = Color(0.520233, 0.130767, 0.117033, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf1rr"]
@@ -58,6 +58,15 @@ corner_radius_bottom_left = 4
 shadow_color = Color(0.627451, 0, 0, 0.776471)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd8y6"]
+bg_color = Color(0.589372, 0, 0.0943662, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0.510687, 0, 0.0830049, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
