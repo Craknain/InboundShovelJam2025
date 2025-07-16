@@ -13,24 +13,21 @@ var is_draggable = false
 var game_theme: String
 var game_genre: String
 var game_platform: String
-var game_image: Texture
 
 var initial_position: Vector2
 var offset : Vector2
 		
-static func create_export(theme: String, genre: String, platform: String, game_image: Texture):
+static func create_export(theme: String, genre: String, platform: String):
 	var export = new_export.instantiate()
 	export.game_theme = theme 
 	export.game_genre = genre
 	export.game_platform = platform
-	export.game_image = game_image
 	return export
 	
 func _ready() -> void:
 	genre_label.text = game_genre
 	theme_label.text = game_theme
 	platform_label.text = game_platform
-	texture_rect.texture = game_image
 
 func _process(delta) -> void:
 	if is_dragged:
@@ -39,9 +36,11 @@ func _process(delta) -> void:
 		initial_position = get_global_position()
 		offset = get_global_mouse_position() - initial_position
 		is_dragged = true
-	if Input.is_action_just_released("click"):
+	if Input.is_action_just_released("click") and is_dragged:
 		is_dragged = false
 		set_global_position(initial_position)
+
+
 
 func _on_mouse_entered() -> void:
 	is_draggable = true
