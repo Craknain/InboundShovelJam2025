@@ -40,6 +40,4 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Create"
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CreateButton" to="." method="_on_create_button_pressed"]
