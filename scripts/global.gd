@@ -9,10 +9,7 @@ var elapsed_time : float = 0
 func create_element(type: String, scene):
 	match type:
 		"Fragment":
-			if scene.type == "Theme":
-				get_tree().get_first_node_in_group("theme").add_child(scene)
-			elif scene.type == "Genre":
-				get_tree().get_first_node_in_group("genre").add_child(scene)
+			get_tree().get_first_node_in_group("fragment").add_child(scene)
 		"Export":
 			get_tree().get_first_node_in_group("export").add_child(scene)
 		"Jam":
@@ -30,4 +27,4 @@ func _process(delta) -> void:
 		elapsed_time = 0
 	
 	if days <= 0:
-		print("GAME OVER")
+		print("GAME IS DONE")
