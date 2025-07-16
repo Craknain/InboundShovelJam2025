@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bgm5d4bmm73bi"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bgm5d4bmm73bi"]
 
 [ext_resource type="FontFile" uid="uid://cdh5ywtlipxi0" path="res://assets/PixeloidSans.otf" id="1_xpaxo"]
 
@@ -78,6 +78,15 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq47i"]
+bg_color = Color(0.826504, 0.471451, 0.614192, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxlug"]
+bg_color = Color(0.984314, 0.788235, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6aipy"]
+bg_color = Color(0.988235, 0.886275, 0.541176, 1)
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -104,3 +113,6 @@ Button/styles/hover = SubResource("StyleBoxFlat_jycv3")
 Button/styles/normal = SubResource("StyleBoxFlat_lf1rr")
 Button/styles/pressed = SubResource("StyleBoxFlat_sd8y6")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_6evr2")
+TabBar/styles/tab_selected = SubResource("StyleBoxFlat_dq47i")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_dxlug")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_6aipy")

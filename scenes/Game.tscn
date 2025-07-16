@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5aehsjhu7d58"]
+[gd_scene load_steps=11 format=3 uid="uid://c5aehsjhu7d58"]
 
 [ext_resource type="PackedScene" uid="uid://ya0g4jbdeu55" path="res://scenes/JamPanel.tscn" id="1_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cvwbuiyyjfy6t" path="res://scenes/Generator.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://ch4d70hqw54ay" path="res://scripts/global.gd" id="1_s0nni"]
+[ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="2_aug50"]
 [ext_resource type="PackedScene" uid="uid://bmd7tmmwpa4sl" path="res://scenes/Exports.tscn" id="3_78awf"]
 [ext_resource type="PackedScene" uid="uid://tdu6wuu1f3hj" path="res://scenes/Fragment.tscn" id="5_s0nni"]
 
@@ -48,6 +49,7 @@ script = ExtResource("1_s0nni")
 [node name="TabContainer" type="TabContainer" parent="."]
 offset_right = 1148.0
 offset_bottom = 652.0
+theme = ExtResource("2_aug50")
 current_tab = 1
 
 [node name="Jams and Submits" type="VBoxContainer" parent="TabContainer"]
