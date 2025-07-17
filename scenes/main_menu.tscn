@@ -45,6 +45,7 @@ layout_mode = 2
 
 [node name="Game title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 32
 text = "Title of the game text"
@@ -67,6 +68,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = ">"
@@ -79,6 +81,7 @@ text = "Start"
 
 [node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "<"
@@ -91,6 +94,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = ">"
@@ -102,6 +106,7 @@ text = "Options"
 
 [node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "<"
@@ -114,6 +119,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = ">"
@@ -125,6 +131,7 @@ text = "Credits"
 
 [node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "<"
@@ -137,6 +144,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = ">"
@@ -148,6 +156,7 @@ text = "Quit"
 
 [node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "<"
