@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bgm5d4bmm73bi"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bgm5d4bmm73bi"]
 
 [ext_resource type="FontFile" uid="uid://cdh5ywtlipxi0" path="res://assets/PixeloidSans.otf" id="1_xpaxo"]
 
@@ -84,8 +84,32 @@ bg_color = Color(0.826504, 0.471451, 0.614192, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxlug"]
 bg_color = Color(0.984314, 0.788235, 0.160784, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss0ab"]
+bg_color = Color(0.977985, 0.843341, 0.36558, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.976471, 0.843137, 0.364706, 1)
+border_blend = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6aipy"]
 bg_color = Color(0.988235, 0.886275, 0.541176, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.662745, 0.623529, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xokb0"]
+bg_color = Color(0.984314, 0.788235, 0.160784, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.664023, 0.621997, 1.92523e-07, 1)
+border_blend = true
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -114,5 +138,10 @@ Button/styles/normal = SubResource("StyleBoxFlat_lf1rr")
 Button/styles/pressed = SubResource("StyleBoxFlat_sd8y6")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_6evr2")
 TabBar/styles/tab_selected = SubResource("StyleBoxFlat_dq47i")
+TabContainer/colors/font_selected_color = Color(0.103743, 0.103744, 0.103744, 1)
+TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
+TabContainer/fonts/font = ExtResource("1_xpaxo")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_dxlug")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_ss0ab")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_6aipy")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_xokb0")

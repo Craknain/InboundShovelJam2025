@@ -30,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 alignment = 1
 
@@ -38,44 +39,53 @@ layout_mode = 2
 alignment = 1
 
 [node name="2d art" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "2D Artist     :"
 
 [node name="programer" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "Programer  :"
 
 [node name="programer2" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "Programer  :"
 
 [node name="font" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "Font style   :"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
 alignment = 1
 
 [node name="2d art" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "chibiparty"
 underline = 1
-uri = "https://ggbot.itch.io/pixeloid-font"
+uri = "https://chibiparty.itch.io/"
 
 [node name="programer" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "TheBugMaker"
 underline = 1
-uri = "https://ggbot.itch.io/pixeloid-font"
+uri = "https://thebugmaker.itch.io/"
 
 [node name="programer2" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "Craknain"
 underline = 1
-uri = "https://ggbot.itch.io/pixeloid-font"
+uri = "https://itch.io/profile/craknain"
 
 [node name="font" type="LinkButton" parent="ColorRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 text = "PIXELOID"
 underline = 1
