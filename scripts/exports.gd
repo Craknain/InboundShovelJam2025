@@ -7,8 +7,8 @@ const new_export: PackedScene = preload("res://scenes/Exports.tscn")
 @onready var platform_label: Label = $MarginContainer/VBoxContainer/Platform
 @onready var texture_rect: TextureRect = $MarginContainer/VBoxContainer/TextureRect
 
-var is_dragged = false
-var is_draggable = false
+var is_dragged : bool = false
+var is_draggable : bool = false
 
 var game_theme: String
 var game_genre: String
