@@ -80,7 +80,7 @@ title = "Puzzles"
 
 [node name="Mythology" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
-image = "uid://daijoc4m4sbpf"
+image = "uid://p70vqetw2t1l"
 title = "Mythology"
 
 [node name="Fantasy" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
