@@ -54,7 +54,6 @@ func _process(delta) -> void:
 		
 	
 func add_fragment(fragment: Fragment):
-	print("add_fragment")
 	fragment.exporting = true
 	if exported_fragments['fragment_one']:
 		if exported_fragments['fragment_two']:
@@ -65,7 +64,7 @@ func add_fragment(fragment: Fragment):
 		
 func _on_export_button_pressed() -> void:
 	if exported_fragments['fragment_one'].type == exported_fragments['fragment_two'].type:
-		print("Pas un bon export")
+		print("Pas un bon export") # To change
 	elif exported_fragments['fragment_one'].type == "Theme":
 		var new_export = Export.create_export(exported_fragments['fragment_one'].value, exported_fragments['fragment_two'].value, type)
 		exported_fragments['fragment_one'].queue_free()
@@ -73,13 +72,10 @@ func _on_export_button_pressed() -> void:
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Fragment and area.get_parent().is_dragged:
-		print("dragged object set")
-		print(area.get_parent())
 		dragged_object = area.get_parent()
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	dragged_object = null
-	print("area exited")
 
 
 func _on_empty_button_pressed() -> void:
