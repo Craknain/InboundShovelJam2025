@@ -18,7 +18,7 @@ func create_element(type: String, scene):
 		
 func reduce_days(amount: float):
 	days -= amount
-	
+	elapsed_time = 0
 func _process(delta) -> void:
 	elapsed_time += delta
 	
