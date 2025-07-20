@@ -1,16 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkon450nrp08m"]
+[gd_scene load_steps=5 format=3 uid="uid://dkon450nrp08m"]
 
 [ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cdh5ywtlipxi0" path="res://assets/PixeloidSans.otf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bgb5wum5hp5ey" path="res://scripts/main_menu.gd" id="2_bqqt6"]
-
-[sub_resource type="Animation" id="Animation_bqqt6"]
-resource_name = "fade-in"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
-_data = {
-&"fade-in": SubResource("Animation_bqqt6")
-}
+[ext_resource type="PackedScene" uid="uid://cfudgqqndphgn" path="res://scenes/options.tscn" id="4_wu84c"]
 
 [node name="Main menu" type="Control"]
 layout_mode = 3
@@ -161,10 +154,8 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "<"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wu84c")
-}
+[node name="Options" parent="." instance=ExtResource("4_wu84c")]
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Options" to="." method="_on_options_pressed"]

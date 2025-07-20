@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://cfudgqqndphgn"]
+[gd_scene load_steps=4 format=3 uid="uid://cfudgqqndphgn"]
+
+[ext_resource type="Script" uid="uid://bb2vu3afcprfv" path="res://scripts/options.gd" id="1_yjkok"]
+[ext_resource type="Script" uid="uid://cj6iss1ravlwg" path="res://scripts/audio_options.gd" id="2_2iy26"]
+[ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="3_2iy26"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -7,6 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_yjkok")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -17,18 +24,78 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.858824, 0.588235, 0.337255, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="audio-options" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 10)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_2iy26")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="audio-options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_right = -305.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="master" type="Label" parent="audio-options/VBoxContainer"]
 layout_mode = 2
-alignment = 1
+text = "Master"
+
+[node name="masterbar" type="HSlider" parent="audio-options/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="music" type="Label" parent="audio-options/VBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="musicbar" type="HSlider" parent="audio-options/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="sfx" type="Label" parent="audio-options/VBoxContainer"]
+layout_mode = 2
+text = "Sfx"
+
+[node name="sfxbar" type="HSlider" parent="audio-options/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="back" type="Button" parent="."]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 0
+offset_left = 1017.0
+offset_top = 608.0
+offset_right = 1147.0
+offset_bottom = 644.0
+theme = ExtResource("3_2iy26")
+text = "Back
+"
+
+[node name="apply" type="Button" parent="."]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 0
+offset_left = 517.0
+offset_top = 446.0
+offset_right = 647.0
+offset_bottom = 482.0
+theme = ExtResource("3_2iy26")
+text = "Apply"
+
+[connection signal="mouse_exited" from="audio-options/VBoxContainer/masterbar" to="audio-options" method="_on_masterbar_mouse_exited"]
+[connection signal="mouse_exited" from="audio-options/VBoxContainer/musicbar" to="audio-options" method="_on_musicbar_mouse_exited"]
+[connection signal="mouse_exited" from="audio-options/VBoxContainer/sfxbar" to="audio-options" method="_on_sfxbar_mouse_exited"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="apply" to="." method="_on_apply_pressed"]
