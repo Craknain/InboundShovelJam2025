@@ -1,19 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5aehsjhu7d58"]
+[gd_scene load_steps=14 format=3 uid="uid://c5aehsjhu7d58"]
 
 [ext_resource type="PackedScene" uid="uid://ya0g4jbdeu55" path="res://scenes/JamPanel.tscn" id="1_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cvwbuiyyjfy6t" path="res://scenes/Generator.tscn" id="1_ibkli"]
 [ext_resource type="Script" uid="uid://ch4d70hqw54ay" path="res://scripts/global.gd" id="1_s0nni"]
+[ext_resource type="Texture2D" uid="uid://bxtlsydtcd2c5" path="res://assets/Desk_and_Mug/Desk.png" id="2_2rd6h"]
 [ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="2_aug50"]
+[ext_resource type="Texture2D" uid="uid://dhh4df0rkquq1" path="res://assets/Computer_Pieces/Computer.png" id="3_7ua8r"]
+[ext_resource type="Texture2D" uid="uid://bc2ixb3ggiu8h" path="res://assets/Computer_Pieces/Keyboard.png" id="4_r7sob"]
 [ext_resource type="PackedScene" uid="uid://cmsx5bhk87xl2" path="res://scenes/Exporter.tscn" id="7_kiw3p"]
+[ext_resource type="Texture2D" uid="uid://cwufjbrqoo6mj" path="res://assets/Desk_and_Mug/Mug.png" id="9_y5y3l"]
+[ext_resource type="Texture2D" uid="uid://b50car1jajccl" path="res://assets/Desk_and_Mug/Coffee_Steam.png" id="10_vjgi4"]
+[ext_resource type="Texture2D" uid="uid://b5xmkx04u21ea" path="res://assets/Player_Pieces/Player.png" id="11_kyk2p"]
+[ext_resource type="Texture2D" uid="uid://cxjpc67cnrljg" path="res://assets/Player_Pieces/Player_Arm.png" id="12_45i86"]
+[ext_resource type="Texture2D" uid="uid://bk1i4gb34hiha" path="res://assets/Player_Pieces/Player_Ponytail.png" id="13_sv1m6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_s0nni")
 
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(553.501, 485)
+scale = Vector2(2.07202, 1.20833)
+texture = ExtResource("2_2rd6h")
+
+[node name="Computer" type="Sprite2D" parent="."]
+position = Vector2(572, 241.5)
+scale = Vector2(4.09, 3.11585)
+texture = ExtResource("3_7ua8r")
+
+[node name="Keyboard" type="Sprite2D" parent="."]
+position = Vector2(584.001, 475)
+texture = ExtResource("4_r7sob")
+
 [node name="TabContainer" type="TabContainer" parent="."]
-offset_right = 1148.0
-offset_bottom = 652.0
+offset_left = 46.0
+offset_top = 29.0
+offset_right = 1109.0
+offset_bottom = 425.0
 theme = ExtResource("2_aug50")
-current_tab = 3
+current_tab = 1
 
 [node name="Jams and Submits" type="VBoxContainer" parent="TabContainer"]
 visible = false
@@ -41,26 +65,27 @@ layout_mode = 2
 [node name="Exports" type="HBoxContainer" parent="TabContainer/Jams and Submits" groups=["export"]]
 layout_mode = 2
 
-[node name="Themes" type="VBoxContainer" parent="TabContainer"]
-visible = false
+[node name="Theme" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="ThemeGenerators" type="HBoxContainer" parent="TabContainer/Themes"]
+[node name="ThemeGenerators" type="HBoxContainer" parent="TabContainer/Theme"]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 
-[node name="Zombies" parent="TabContainer/Themes/ThemeGenerators" instance=ExtResource("1_ibkli")]
+[node name="Puzzles" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
-border_color = Color(0.827451, 0, 0, 1)
-title = "Zombies"
+image = "uid://fc6pla1eopyy"
+title = "Puzzles"
 
-[node name="Mythology" parent="TabContainer/Themes/ThemeGenerators" instance=ExtResource("1_ibkli")]
+[node name="Mythology" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
+image = "uid://daijoc4m4sbpf"
 title = "Mythology"
 
-[node name="Fantasy" parent="TabContainer/Themes/ThemeGenerators" instance=ExtResource("1_ibkli")]
+[node name="Fantasy" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
+image = "uid://fy52ipnr3taa"
 title = "Fantasy"
 
 [node name="Genre" type="VBoxContainer" parent="TabContainer"]
@@ -74,23 +99,25 @@ layout_mode = 2
 
 [node name="Roguelike" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
-image = "uid://cnhuwabew6335"
-border_color = Color(0.780392, 0, 0, 1)
+image = "uid://bay8lj6qipb2u"
 duration = 1.0
 title = "Roguelike"
 type = "Genre"
 
 [node name="Platformer" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
+image = "uid://c3adi2xqx32pp"
 title = "Platformer"
 type = "Genre"
 
 [node name="Tower Defense" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
+image = "uid://ctfnlflsgksk7"
 title = "Tower Defense"
 type = "Genre"
 
 [node name="Export" type="VBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -103,17 +130,40 @@ alignment = 1
 
 [node name="PC" parent="TabContainer/Export/Exporters" instance=ExtResource("7_kiw3p")]
 layout_mode = 2
+image = "uid://d0ndjku0yo128"
 
 [node name="Console" parent="TabContainer/Export/Exporters" instance=ExtResource("7_kiw3p")]
 layout_mode = 2
 type = "Console"
+image = "uid://coh3rhsxq438q"
 
 [node name="Mobile" parent="TabContainer/Export/Exporters" instance=ExtResource("7_kiw3p")]
 layout_mode = 2
 type = "Mobile"
+image = "uid://b3m17o5htojpa"
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Export"]
 layout_mode = 2
 
 [node name="Fragments" type="HBoxContainer" parent="TabContainer/Export" groups=["fragment"]]
 layout_mode = 2
+
+[node name="Mug" type="Sprite2D" parent="."]
+position = Vector2(165.001, 505)
+texture = ExtResource("9_y5y3l")
+
+[node name="CoffeeSteam" type="Sprite2D" parent="."]
+position = Vector2(170.001, 473)
+texture = ExtResource("10_vjgi4")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(575.501, 532)
+texture = ExtResource("11_kyk2p")
+
+[node name="PlayerArm" type="Sprite2D" parent="."]
+position = Vector2(668.501, 549)
+texture = ExtResource("12_45i86")
+
+[node name="PlayerPonytail" type="Sprite2D" parent="."]
+position = Vector2(557.001, 574)
+texture = ExtResource("13_sv1m6")
