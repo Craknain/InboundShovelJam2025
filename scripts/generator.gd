@@ -8,7 +8,7 @@ class_name Generator
 @onready var texture_rect: TextureRect = $MarginContainer/VBoxContainer/TextureRect
 
 # Exports
-@export_file("*.svg", "*.jpg") var image = "res://icon.svg"
+@export_file("*.svg", "*.jpg", "*.png") var image = "res://icon.svg"
 @export_color_no_alpha var background_color: Color
 @export_color_no_alpha var border_color: Color
 @export var duration: float = 0.5
