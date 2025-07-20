@@ -9,6 +9,7 @@ const fragment : PackedScene = preload("res://scenes/Fragment.tscn")
 
 var is_dragged = false
 var is_draggable = false
+var exporting : bool = false
 
 var initial_position: Vector2
 var offset : Vector2
@@ -32,14 +33,18 @@ func _ready():
 func _process(delta) -> void:
 	if is_dragged:
 		global_position = get_global_mouse_position() - offset
-	if Input.is_action_just_pressed("click") and is_draggable:
-		initial_position = get_global_position()
-		offset = get_global_mouse_position() - initial_position
-		is_dragged = true
+	if not exporting:
+		if Input.is_action_just_pressed("click") and is_draggable:
+			initial_position = get_global_position()
+			offset = get_global_mouse_position() - initial_position
+			is_dragged = true
+	else:
+		var stylebox: StyleBoxFlat = get_theme_stylebox("game_Theme").duplicate()
+		stylebox.border_color = Color(0, 255, 0)
+		add_theme_stylebox_override("panel", stylebox)
 	if Input.is_action_just_released("click") and is_dragged:
 		is_dragged = false
-		set_global_position(initial_position)	
-	
+		set_global_position(initial_position)
 func _on_mouse_entered() -> void:
 	is_draggable = true
 
