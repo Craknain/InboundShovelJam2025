@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cyvokri8d4do5" path="res://scripts/exporter.gd" id="2_y0bob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_el1hm"]
-size = Vector2(262, 229)
+size = Vector2(198, 229)
 
 [node name="Exporter" type="PanelContainer"]
 custom_minimum_size = Vector2(200, 200)
@@ -29,8 +29,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+stretch_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="FirstFragment" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -42,12 +48,23 @@ layout_mode = 2
 layout_mode = 2
 text = "Export"
 
+[node name="EmptyButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Empty"
+
+[node name="InstructionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Drag a theme and a genre
+ to export a game"
+horizontal_alignment = 1
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(139, 121.5)
+position = Vector2(107, 121.5)
 shape = SubResource("RectangleShape2D_el1hm")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExportButton" to="." method="_on_export_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/EmptyButton" to="." method="_on_empty_button_pressed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

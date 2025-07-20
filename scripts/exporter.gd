@@ -6,15 +6,20 @@ const exporter = preload("res://scenes/Exporter.tscn")
 var dragged_object : Fragment = null
 
 @export_enum("PC", "Mobile", "Console") var type: String = "PC"
+@export_file("*.svg", "*.jpg", "*.png") var image = "res://icon.svg"
 @onready var type_label: Label = $MarginContainer/VBoxContainer/TypeLabel
 @onready var export_button: Button = $MarginContainer/VBoxContainer/ExportButton
 @onready var first_fragment: TextureRect = $MarginContainer/VBoxContainer/HBoxContainer/FirstFragment
 @onready var second_fragment: TextureRect = $MarginContainer/VBoxContainer/HBoxContainer/SecondFragment
+@onready var instruction_label: Label = $MarginContainer/VBoxContainer/InstructionLabel
+@onready var texture_rect: TextureRect = $MarginContainer/VBoxContainer/TextureRect
 
 var exported_fragments : Dictionary[String, Fragment] = {'fragment_one': null, 'fragment_two': null}
 
+
 func _ready():
 	type_label.text = type
+	texture_rect.texture = load(image)
 
 static func create_exported(type: String):
 	var new_exporter = exporter.instantiate()
@@ -22,6 +27,11 @@ static func create_exported(type: String):
 	return new_exporter
 	
 func _process(delta) -> void:
+	if !(exported_fragments['fragment_one'] or exported_fragments['fragment_two']):
+		instruction_label.visible = true
+	else:
+		instruction_label.visible = false
+	
 	if !(exported_fragments['fragment_one'] and exported_fragments['fragment_two']):
 		export_button.visible = false
 	else:
@@ -44,6 +54,8 @@ func _process(delta) -> void:
 		
 	
 func add_fragment(fragment: Fragment):
+	print("add_fragment")
+	fragment.exporting = true
 	if exported_fragments['fragment_one']:
 		if exported_fragments['fragment_two']:
 			return
@@ -60,8 +72,16 @@ func _on_export_button_pressed() -> void:
 		exported_fragments['fragment_two'].queue_free()
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Fragment:
+	if area.get_parent() is Fragment and area.get_parent().is_dragged:
+		print("dragged object set")
+		print(area.get_parent())
 		dragged_object = area.get_parent()
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	dragged_object = null
+	print("area exited")
+
+
+func _on_empty_button_pressed() -> void:
+	exported_fragments['fragment_one'] = null
+	exported_fragments['fragment_two'] = null
