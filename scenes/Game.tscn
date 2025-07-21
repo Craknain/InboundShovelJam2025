@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5aehsjhu7d58"]
+[gd_scene load_steps=13 format=3 uid="uid://c5aehsjhu7d58"]
 
-[ext_resource type="PackedScene" uid="uid://ya0g4jbdeu55" path="res://scenes/JamPanel.tscn" id="1_cpr0p"]
+[ext_resource type="Script" uid="uid://d0l0oqonl3tdk" path="res://scripts/game.gd" id="1_2rd6h"]
 [ext_resource type="PackedScene" uid="uid://cvwbuiyyjfy6t" path="res://scenes/Generator.tscn" id="1_ibkli"]
-[ext_resource type="Script" uid="uid://ch4d70hqw54ay" path="res://scripts/global.gd" id="1_s0nni"]
 [ext_resource type="Texture2D" uid="uid://bxtlsydtcd2c5" path="res://assets/Desk_and_Mug/Desk.png" id="2_2rd6h"]
 [ext_resource type="Theme" uid="uid://bgm5d4bmm73bi" path="res://assets/game_Theme.tres" id="2_aug50"]
 [ext_resource type="Texture2D" uid="uid://dhh4df0rkquq1" path="res://assets/Computer_Pieces/Computer.png" id="3_7ua8r"]
@@ -15,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bk1i4gb34hiha" path="res://assets/Player_Pieces/Player_Ponytail.png" id="13_sv1m6"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_s0nni")
+script = ExtResource("1_2rd6h")
 
 [node name="Desk" type="Sprite2D" parent="."]
 position = Vector2(553.501, 485)
@@ -37,10 +36,9 @@ offset_top = 29.0
 offset_right = 1109.0
 offset_bottom = 425.0
 theme = ExtResource("2_aug50")
-current_tab = 1
+current_tab = 0
 
 [node name="Jams and Submits" type="VBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -48,15 +46,6 @@ metadata/_tab_index = 0
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 200
-
-[node name="JamPanel" parent="TabContainer/Jams and Submits/Jams" instance=ExtResource("1_cpr0p")]
-layout_mode = 2
-
-[node name="JamPanel2" parent="TabContainer/Jams and Submits/Jams" instance=ExtResource("1_cpr0p")]
-layout_mode = 2
-
-[node name="JamPanel3" parent="TabContainer/Jams and Submits/Jams" instance=ExtResource("1_cpr0p")]
-layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Jams and Submits"]
 custom_minimum_size = Vector2(0, 100)
@@ -66,21 +55,25 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Theme" type="VBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="ThemeGenerators" type="HBoxContainer" parent="TabContainer/Theme"]
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="Puzzles" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
 image = "uid://fc6pla1eopyy"
+duration = 1.0
 title = "Puzzles"
 
 [node name="Mythology" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
 image = "uid://p70vqetw2t1l"
+duration = 0.75
 title = "Mythology"
 
 [node name="Fantasy" parent="TabContainer/Theme/ThemeGenerators" instance=ExtResource("1_ibkli")]
@@ -94,8 +87,9 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="GenreGenerators" type="HBoxContainer" parent="TabContainer/Genre"]
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+theme_override_constants/separation = 50
 
 [node name="Roguelike" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
@@ -113,6 +107,7 @@ type = "Genre"
 [node name="Tower Defense" parent="TabContainer/Genre/GenreGenerators" instance=ExtResource("1_ibkli")]
 layout_mode = 2
 image = "uid://ctfnlflsgksk7"
+duration = 0.75
 title = "Tower Defense"
 type = "Genre"
 
@@ -149,11 +144,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Mug" type="Sprite2D" parent="."]
-position = Vector2(165.001, 505)
+position = Vector2(392, 498)
 texture = ExtResource("9_y5y3l")
 
 [node name="CoffeeSteam" type="Sprite2D" parent="."]
-position = Vector2(170.001, 473)
+position = Vector2(397, 467)
 texture = ExtResource("10_vjgi4")
 
 [node name="Player" type="Sprite2D" parent="."]
@@ -167,3 +162,20 @@ texture = ExtResource("12_45i86")
 [node name="PlayerPonytail" type="Sprite2D" parent="."]
 position = Vector2(557.001, 574)
 texture = ExtResource("13_sv1m6")
+
+[node name="DaysLabel" type="Label" parent="." groups=["daylabel"]]
+offset_left = 1010.0
+offset_top = 33.0
+offset_right = 1106.0
+offset_bottom = 55.3333
+
+[node name="PointsLabel" type="Label" parent="."]
+offset_left = 843.0
+offset_top = 469.0
+offset_right = 944.0
+offset_bottom = 517.0
+
+[node name="SpawnJamTimer" type="Timer" parent="."]
+wait_time = 8.0
+
+[connection signal="timeout" from="SpawnJamTimer" to="." method="_on_spawn_jam_timer_timeout"]

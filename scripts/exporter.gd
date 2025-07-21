@@ -63,12 +63,17 @@ func add_fragment(fragment: Fragment):
 		exported_fragments['fragment_one'] = fragment
 		
 func _on_export_button_pressed() -> void:
-	if exported_fragments['fragment_one'].type == exported_fragments['fragment_two'].type:
-		print("Pas un bon export") # To change
-	elif exported_fragments['fragment_one'].type == "Theme":
-		var new_export = Export.create_export(exported_fragments['fragment_one'].value, exported_fragments['fragment_two'].value, type)
-		exported_fragments['fragment_one'].queue_free()
-		exported_fragments['fragment_two'].queue_free()
+	if exported_fragments['fragment_one'].type != exported_fragments['fragment_two'].type:
+		if exported_fragments['fragment_one'].type == "Theme":
+			var new_export = Export.create_export(exported_fragments['fragment_one'].value, exported_fragments['fragment_two'].value, type)
+			Global.create_element("Export", new_export)
+		else:
+			var new_export = Export.create_export(exported_fragments['fragment_two'].value, exported_fragments['fragment_one'].value, type)
+			Global.create_element("Export", new_export)
+	exported_fragments['fragment_one'].queue_free()
+	exported_fragments['fragment_two'].queue_free()
+	Global.reduce_days(0.5)
+	
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Fragment and area.get_parent().is_dragged:
@@ -79,5 +84,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_empty_button_pressed() -> void:
+	exported_fragments['fragment_one'].exporting = false
+	exported_fragments['fragment_one'].remove_theme_stylebox_override("panel")
 	exported_fragments['fragment_one'] = null
+	exported_fragments['fragment_two'].exporting = false
+	exported_fragments['fragment_two'].remove_theme_stylebox_override("panel")
 	exported_fragments['fragment_two'] = null

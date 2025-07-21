@@ -7,7 +7,7 @@
 size = Vector2(262, 229)
 
 [node name="Exports" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 100)
 offset_right = 278.0
 offset_bottom = 244.0
 size_flags_horizontal = 0

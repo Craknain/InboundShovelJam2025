@@ -45,6 +45,7 @@ func _process(delta) -> void:
 	if Input.is_action_just_released("click") and is_dragged:
 		is_dragged = false
 		set_global_position(initial_position)
+
 func _on_mouse_entered() -> void:
 	is_draggable = true
 

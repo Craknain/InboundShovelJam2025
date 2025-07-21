@@ -1,11 +1,11 @@
 extends Control
 
-@onready var options: Control = $"."
+@onready var margin_container: MarginContainer = $"../MarginContainer"
 
 
 
 func _on_back_pressed() -> void:
-	options.hide()
+	margin_container.show()
 
 func _on_apply_pressed() -> void:
 	AudioServer.set_bus_volume_db(0,linear_to_db($"audio-options/VBoxContainer/masterbar".value))
